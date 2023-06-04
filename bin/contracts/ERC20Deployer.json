@@ -1,0 +1,1490 @@
+{
+    "contractName": "ERC20Deployer",
+    "abi": [
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "erc20",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint8",
+                    "name": "tokenType",
+                    "type": "uint8"
+                }
+            ],
+            "name": "DeployERC20Event",
+            "type": "event"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "bytes",
+                    "name": "bytecode",
+                    "type": "bytes"
+                }
+            ],
+            "name": "deployERC20",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "bytes",
+                    "name": "bytecode",
+                    "type": "bytes"
+                }
+            ],
+            "name": "deployERC20Burnable",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "bytes",
+                    "name": "bytecode",
+                    "type": "bytes"
+                }
+            ],
+            "name": "deployERC20MintBurnable",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "bytes",
+                    "name": "bytecode",
+                    "type": "bytes"
+                }
+            ],
+            "name": "deployERC20Mintable",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"erc20\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint8\",\"name\":\"tokenType\",\"type\":\"uint8\"}],\"name\":\"DeployERC20Event\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"bytecode\",\"type\":\"bytes\"}],\"name\":\"deployERC20\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"bytecode\",\"type\":\"bytes\"}],\"name\":\"deployERC20Burnable\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"bytecode\",\"type\":\"bytes\"}],\"name\":\"deployERC20MintBurnable\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"bytecode\",\"type\":\"bytes\"}],\"name\":\"deployERC20Mintable\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/kangjuhyup/Documents/nft-contracts/contracts/ERC20Deployer.sol\":\"ERC20Deployer\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/kangjuhyup/Documents/nft-contracts/contracts/ERC20Deployer.sol\":{\"keccak256\":\"0x79bfa9f356c3e5dd50c076facca103733d8eaaec5b84a28df739d3b9f363c404\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://18112facc7c0ead05c55ffe8183a8e7c4a5b1f7feda0fb98a1f4628b253f2b98\",\"dweb:/ipfs/QmQww9fUdkUTo9TmSyyF1FknsEfX5r69eTEQaUbc5Wwr2u\"]}},\"version\":1}",
+    "bytecode": "608060405234801561001057600080fd5b5061029f806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c8063620c9bfc1461005157806384ec1431146100665780638fc5ac0614610079578063a10d2a9a1461008c575b600080fd5b61006461005f366004610198565b61009f565b005b610064610074366004610198565b6100d8565b610064610087366004610198565b610111565b61006461009a366004610198565b610149565b60008151602083016000f06040519091506003906001600160a01b03831690339060008051602061024a83398151915290600090a45050565b60008151602083016000f06040519091506002906001600160a01b03831690339060008051602061024a83398151915290600090a45050565b60008151602083016000f06040519091506000906001600160a01b03831690339060008051602061024a833981519152908490a45050565b60008151602083016000f06040519091506001906001600160a01b03831690339060008051602061024a83398151915290600090a45050565b634e487b7160e01b600052604160045260246000fd5b6000602082840312156101aa57600080fd5b813567ffffffffffffffff808211156101c257600080fd5b818401915084601f8301126101d657600080fd5b8135818111156101e8576101e8610182565b604051601f8201601f19908116603f0116810190838211818310171561021057610210610182565b8160405282815287602084870101111561022957600080fd5b82602086016020830137600092810160200192909252509594505050505056fed64af221f3cccdc4d74f85c1b3fbc9eb22ce82c173386a24839d6d4a60b1ceeaa264697066735822122050ae3eaa39c03326961a59cb58768b02a7754913d4c06e1d822fa691ffe86d4f64736f6c63430008130033",
+    "deployedBytecode": "608060405234801561001057600080fd5b506004361061004c5760003560e01c8063620c9bfc1461005157806384ec1431146100665780638fc5ac0614610079578063a10d2a9a1461008c575b600080fd5b61006461005f366004610198565b61009f565b005b610064610074366004610198565b6100d8565b610064610087366004610198565b610111565b61006461009a366004610198565b610149565b60008151602083016000f06040519091506003906001600160a01b03831690339060008051602061024a83398151915290600090a45050565b60008151602083016000f06040519091506002906001600160a01b03831690339060008051602061024a83398151915290600090a45050565b60008151602083016000f06040519091506000906001600160a01b03831690339060008051602061024a833981519152908490a45050565b60008151602083016000f06040519091506001906001600160a01b03831690339060008051602061024a83398151915290600090a45050565b634e487b7160e01b600052604160045260246000fd5b6000602082840312156101aa57600080fd5b813567ffffffffffffffff808211156101c257600080fd5b818401915084601f8301126101d657600080fd5b8135818111156101e8576101e8610182565b604051601f8201601f19908116603f0116810190838211818310171561021057610210610182565b8160405282815287602084870101111561022957600080fd5b82602086016020830137600092810160200192909252509594505050505056fed64af221f3cccdc4d74f85c1b3fbc9eb22ce82c173386a24839d6d4a60b1ceeaa264697066735822122050ae3eaa39c03326961a59cb58768b02a7754913d4c06e1d822fa691ffe86d4f64736f6c63430008130033",
+    "sourceMap": "58:1060:1:-:0;;;;;;;;;;;;;;;;;;;",
+    "deployedSourceMap": "58:1060:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;880:236;;;;;;:::i;:::-;;:::i;:::-;;644:232;;;;;;:::i;:::-;;:::i;184:220::-;;;;;;:::i;:::-;;:::i;408:233::-;;;;;;:::i;:::-;;:::i;880:236::-;949:17;1039:8;1033:15;1026:4;1016:8;1012:19;1009:1;1002:47;1069:42;;989:60;;-1:-1:-1;1109:1:1;;-1:-1:-1;;;;;1069:42:1;;;1086:10;;-1:-1:-1;;;;;;;;;;;1069:42:1;;;;943:173;880:236;:::o;644:232::-;709:17;799:8;793:15;786:4;776:8;772:19;769:1;762:47;829:42;;749:60;;-1:-1:-1;869:1:1;;-1:-1:-1;;;;;829:42:1;;;846:10;;-1:-1:-1;;;;;;;;;;;829:42:1;;;;703:173;644:232;:::o;184:220::-;241:17;331:8;325:15;318:4;308:8;304:19;301:1;294:47;357:42;;281:60;;-1:-1:-1;397:1:1;;-1:-1:-1;;;;;357:42:1;;;374:10;;-1:-1:-1;;;;;;;;;;;357:42:1;397:1;;357:42;235:169;184:220;:::o;408:233::-;473:17;563:8;557:15;550:4;540:8;536:19;533:1;526:47;593:42;;513:60;;-1:-1:-1;633:1:1;;-1:-1:-1;;;;;593:42:1;;;610:10;;-1:-1:-1;;;;;;;;;;;593:42:1;;;;467:174;408:233;:::o;14:127:194:-;75:10;70:3;66:20;63:1;56:31;106:4;103:1;96:15;130:4;127:1;120:15;146:921;214:6;267:2;255:9;246:7;242:23;238:32;235:52;;;283:1;280;273:12;235:52;323:9;310:23;352:18;393:2;385:6;382:14;379:34;;;409:1;406;399:12;379:34;447:6;436:9;432:22;422:32;;492:7;485:4;481:2;477:13;473:27;463:55;;514:1;511;504:12;463:55;550:2;537:16;572:2;568;565:10;562:36;;;578:18;;:::i;:::-;653:2;647:9;621:2;707:13;;-1:-1:-1;;703:22:194;;;727:2;699:31;695:40;683:53;;;751:18;;;771:22;;;748:46;745:72;;;797:18;;:::i;:::-;837:10;833:2;826:22;872:2;864:6;857:18;912:7;907:2;902;898;894:11;890:20;887:33;884:53;;;933:1;930;923:12;884:53;989:2;984;980;976:11;971:2;963:6;959:15;946:46;1034:1;1012:15;;;1029:2;1008:24;1001:35;;;;-1:-1:-1;1016:6:194;146:921;-1:-1:-1;;;;;146:921:194:o",
+    "sourcePath": "/Users/kangjuhyup/Documents/nft-contracts/contracts/ERC20Deployer.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.8.19+commit.7dd6d404"
+    },
+    "ast": {
+        "absolutePath": "/Users/kangjuhyup/Documents/nft-contracts/contracts/ERC20Deployer.sol",
+        "exportedSymbols": {
+            "ERC20Deployer": [
+                102
+            ]
+        },
+        "id": 103,
+        "license": "MIT",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 25,
+                "literals": [
+                    "solidity",
+                    "^",
+                    "0.8",
+                    ".9"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "32:23:1"
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "canonicalName": "ERC20Deployer",
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "fullyImplemented": true,
+                "id": 102,
+                "linearizedBaseContracts": [
+                    102
+                ],
+                "name": "ERC20Deployer",
+                "nameLocation": "67:13:1",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "anonymous": false,
+                        "eventSelector": "d64af221f3cccdc4d74f85c1b3fbc9eb22ce82c173386a24839d6d4a60b1ceea",
+                        "id": 33,
+                        "name": "DeployERC20Event",
+                        "nameLocation": "92:16:1",
+                        "nodeType": "EventDefinition",
+                        "parameters": {
+                            "id": 32,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 27,
+                                    "indexed": true,
+                                    "mutability": "mutable",
+                                    "name": "owner",
+                                    "nameLocation": "125:5:1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 33,
+                                    "src": "109:21:1",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                    },
+                                    "typeName": {
+                                        "id": 26,
+                                        "name": "address",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "109:7:1",
+                                        "stateMutability": "nonpayable",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 29,
+                                    "indexed": true,
+                                    "mutability": "mutable",
+                                    "name": "erc20",
+                                    "nameLocation": "148:5:1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 33,
+                                    "src": "132:21:1",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                    },
+                                    "typeName": {
+                                        "id": 28,
+                                        "name": "address",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "132:7:1",
+                                        "stateMutability": "nonpayable",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 31,
+                                    "indexed": true,
+                                    "mutability": "mutable",
+                                    "name": "tokenType",
+                                    "nameLocation": "169:9:1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 33,
+                                    "src": "155:23:1",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint8",
+                                        "typeString": "uint8"
+                                    },
+                                    "typeName": {
+                                        "id": 30,
+                                        "name": "uint8",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "155:5:1",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint8",
+                                            "typeString": "uint8"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "108:71:1"
+                        },
+                        "src": "86:94:1"
+                    },
+                    {
+                        "body": {
+                            "id": 49,
+                            "nodeType": "Block",
+                            "src": "235:169:1",
+                            "statements": [
+                                {
+                                    "assignments": [
+                                        39
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 39,
+                                            "mutability": "mutable",
+                                            "name": "contractB",
+                                            "nameLocation": "249:9:1",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 49,
+                                            "src": "241:17:1",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            },
+                                            "typeName": {
+                                                "id": 38,
+                                                "name": "address",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "241:7:1",
+                                                "stateMutability": "nonpayable",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 40,
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "241:17:1"
+                                },
+                                {
+                                    "AST": {
+                                        "nodeType": "YulBlock",
+                                        "src": "273:74:1",
+                                        "statements": [
+                                            {
+                                                "nodeType": "YulAssignment",
+                                                "src": "281:60:1",
+                                                "value": {
+                                                    "arguments": [
+                                                        {
+                                                            "kind": "number",
+                                                            "nodeType": "YulLiteral",
+                                                            "src": "301:1:1",
+                                                            "type": "",
+                                                            "value": "0"
+                                                        },
+                                                        {
+                                                            "arguments": [
+                                                                {
+                                                                    "name": "bytecode",
+                                                                    "nodeType": "YulIdentifier",
+                                                                    "src": "308:8:1"
+                                                                },
+                                                                {
+                                                                    "kind": "number",
+                                                                    "nodeType": "YulLiteral",
+                                                                    "src": "318:4:1",
+                                                                    "type": "",
+                                                                    "value": "0x20"
+                                                                }
+                                                            ],
+                                                            "functionName": {
+                                                                "name": "add",
+                                                                "nodeType": "YulIdentifier",
+                                                                "src": "304:3:1"
+                                                            },
+                                                            "nodeType": "YulFunctionCall",
+                                                            "src": "304:19:1"
+                                                        },
+                                                        {
+                                                            "arguments": [
+                                                                {
+                                                                    "name": "bytecode",
+                                                                    "nodeType": "YulIdentifier",
+                                                                    "src": "331:8:1"
+                                                                }
+                                                            ],
+                                                            "functionName": {
+                                                                "name": "mload",
+                                                                "nodeType": "YulIdentifier",
+                                                                "src": "325:5:1"
+                                                            },
+                                                            "nodeType": "YulFunctionCall",
+                                                            "src": "325:15:1"
+                                                        }
+                                                    ],
+                                                    "functionName": {
+                                                        "name": "create",
+                                                        "nodeType": "YulIdentifier",
+                                                        "src": "294:6:1"
+                                                    },
+                                                    "nodeType": "YulFunctionCall",
+                                                    "src": "294:47:1"
+                                                },
+                                                "variableNames": [
+                                                    {
+                                                        "name": "contractB",
+                                                        "nodeType": "YulIdentifier",
+                                                        "src": "281:9:1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "evmVersion": "paris",
+                                    "externalReferences": [
+                                        {
+                                            "declaration": 35,
+                                            "isOffset": false,
+                                            "isSlot": false,
+                                            "src": "308:8:1",
+                                            "valueSize": 1
+                                        },
+                                        {
+                                            "declaration": 35,
+                                            "isOffset": false,
+                                            "isSlot": false,
+                                            "src": "331:8:1",
+                                            "valueSize": 1
+                                        },
+                                        {
+                                            "declaration": 39,
+                                            "isOffset": false,
+                                            "isSlot": false,
+                                            "src": "281:9:1",
+                                            "valueSize": 1
+                                        }
+                                    ],
+                                    "id": 41,
+                                    "nodeType": "InlineAssembly",
+                                    "src": "264:83:1"
+                                },
+                                {
+                                    "eventCall": {
+                                        "arguments": [
+                                            {
+                                                "expression": {
+                                                    "id": 43,
+                                                    "name": "msg",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 4294967281,
+                                                    "src": "374:3:1",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_magic_message",
+                                                        "typeString": "msg"
+                                                    }
+                                                },
+                                                "id": 44,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "memberLocation": "378:6:1",
+                                                "memberName": "sender",
+                                                "nodeType": "MemberAccess",
+                                                "src": "374:10:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            },
+                                            {
+                                                "id": 45,
+                                                "name": "contractB",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 39,
+                                                "src": "386:9:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            },
+                                            {
+                                                "hexValue": "30",
+                                                "id": 46,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "number",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "397:1:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_rational_0_by_1",
+                                                    "typeString": "int_const 0"
+                                                },
+                                                "value": "0"
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_rational_0_by_1",
+                                                    "typeString": "int_const 0"
+                                                }
+                                            ],
+                                            "id": 42,
+                                            "name": "DeployERC20Event",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 33,
+                                            "src": "357:16:1",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint8_$returns$__$",
+                                                "typeString": "function (address,address,uint8)"
+                                            }
+                                        },
+                                        "id": 47,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "357:42:1",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 48,
+                                    "nodeType": "EmitStatement",
+                                    "src": "352:47:1"
+                                }
+                            ]
+                        },
+                        "functionSelector": "8fc5ac06",
+                        "id": 50,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "deployERC20",
+                        "nameLocation": "193:11:1",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 36,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 35,
+                                    "mutability": "mutable",
+                                    "name": "bytecode",
+                                    "nameLocation": "218:8:1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 50,
+                                    "src": "205:21:1",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bytes_memory_ptr",
+                                        "typeString": "bytes"
+                                    },
+                                    "typeName": {
+                                        "id": 34,
+                                        "name": "bytes",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "205:5:1",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bytes_storage_ptr",
+                                            "typeString": "bytes"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "204:23:1"
+                        },
+                        "returnParameters": {
+                            "id": 37,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "235:0:1"
+                        },
+                        "scope": 102,
+                        "src": "184:220:1",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 66,
+                            "nodeType": "Block",
+                            "src": "467:174:1",
+                            "statements": [
+                                {
+                                    "assignments": [
+                                        56
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 56,
+                                            "mutability": "mutable",
+                                            "name": "contractB",
+                                            "nameLocation": "481:9:1",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 66,
+                                            "src": "473:17:1",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            },
+                                            "typeName": {
+                                                "id": 55,
+                                                "name": "address",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "473:7:1",
+                                                "stateMutability": "nonpayable",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 57,
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "473:17:1"
+                                },
+                                {
+                                    "AST": {
+                                        "nodeType": "YulBlock",
+                                        "src": "505:74:1",
+                                        "statements": [
+                                            {
+                                                "nodeType": "YulAssignment",
+                                                "src": "513:60:1",
+                                                "value": {
+                                                    "arguments": [
+                                                        {
+                                                            "kind": "number",
+                                                            "nodeType": "YulLiteral",
+                                                            "src": "533:1:1",
+                                                            "type": "",
+                                                            "value": "0"
+                                                        },
+                                                        {
+                                                            "arguments": [
+                                                                {
+                                                                    "name": "bytecode",
+                                                                    "nodeType": "YulIdentifier",
+                                                                    "src": "540:8:1"
+                                                                },
+                                                                {
+                                                                    "kind": "number",
+                                                                    "nodeType": "YulLiteral",
+                                                                    "src": "550:4:1",
+                                                                    "type": "",
+                                                                    "value": "0x20"
+                                                                }
+                                                            ],
+                                                            "functionName": {
+                                                                "name": "add",
+                                                                "nodeType": "YulIdentifier",
+                                                                "src": "536:3:1"
+                                                            },
+                                                            "nodeType": "YulFunctionCall",
+                                                            "src": "536:19:1"
+                                                        },
+                                                        {
+                                                            "arguments": [
+                                                                {
+                                                                    "name": "bytecode",
+                                                                    "nodeType": "YulIdentifier",
+                                                                    "src": "563:8:1"
+                                                                }
+                                                            ],
+                                                            "functionName": {
+                                                                "name": "mload",
+                                                                "nodeType": "YulIdentifier",
+                                                                "src": "557:5:1"
+                                                            },
+                                                            "nodeType": "YulFunctionCall",
+                                                            "src": "557:15:1"
+                                                        }
+                                                    ],
+                                                    "functionName": {
+                                                        "name": "create",
+                                                        "nodeType": "YulIdentifier",
+                                                        "src": "526:6:1"
+                                                    },
+                                                    "nodeType": "YulFunctionCall",
+                                                    "src": "526:47:1"
+                                                },
+                                                "variableNames": [
+                                                    {
+                                                        "name": "contractB",
+                                                        "nodeType": "YulIdentifier",
+                                                        "src": "513:9:1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "evmVersion": "paris",
+                                    "externalReferences": [
+                                        {
+                                            "declaration": 52,
+                                            "isOffset": false,
+                                            "isSlot": false,
+                                            "src": "540:8:1",
+                                            "valueSize": 1
+                                        },
+                                        {
+                                            "declaration": 52,
+                                            "isOffset": false,
+                                            "isSlot": false,
+                                            "src": "563:8:1",
+                                            "valueSize": 1
+                                        },
+                                        {
+                                            "declaration": 56,
+                                            "isOffset": false,
+                                            "isSlot": false,
+                                            "src": "513:9:1",
+                                            "valueSize": 1
+                                        }
+                                    ],
+                                    "id": 58,
+                                    "nodeType": "InlineAssembly",
+                                    "src": "496:83:1"
+                                },
+                                {
+                                    "eventCall": {
+                                        "arguments": [
+                                            {
+                                                "expression": {
+                                                    "id": 60,
+                                                    "name": "msg",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 4294967281,
+                                                    "src": "610:3:1",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_magic_message",
+                                                        "typeString": "msg"
+                                                    }
+                                                },
+                                                "id": 61,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "memberLocation": "614:6:1",
+                                                "memberName": "sender",
+                                                "nodeType": "MemberAccess",
+                                                "src": "610:10:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            },
+                                            {
+                                                "id": 62,
+                                                "name": "contractB",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 56,
+                                                "src": "622:9:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            },
+                                            {
+                                                "hexValue": "31",
+                                                "id": 63,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "number",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "633:1:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_rational_1_by_1",
+                                                    "typeString": "int_const 1"
+                                                },
+                                                "value": "1"
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_rational_1_by_1",
+                                                    "typeString": "int_const 1"
+                                                }
+                                            ],
+                                            "id": 59,
+                                            "name": "DeployERC20Event",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 33,
+                                            "src": "593:16:1",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint8_$returns$__$",
+                                                "typeString": "function (address,address,uint8)"
+                                            }
+                                        },
+                                        "id": 64,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "593:42:1",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 65,
+                                    "nodeType": "EmitStatement",
+                                    "src": "588:47:1"
+                                }
+                            ]
+                        },
+                        "functionSelector": "a10d2a9a",
+                        "id": 67,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "deployERC20Mintable",
+                        "nameLocation": "417:19:1",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 53,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 52,
+                                    "mutability": "mutable",
+                                    "name": "bytecode",
+                                    "nameLocation": "450:8:1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 67,
+                                    "src": "437:21:1",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bytes_memory_ptr",
+                                        "typeString": "bytes"
+                                    },
+                                    "typeName": {
+                                        "id": 51,
+                                        "name": "bytes",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "437:5:1",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bytes_storage_ptr",
+                                            "typeString": "bytes"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "436:23:1"
+                        },
+                        "returnParameters": {
+                            "id": 54,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "467:0:1"
+                        },
+                        "scope": 102,
+                        "src": "408:233:1",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 83,
+                            "nodeType": "Block",
+                            "src": "703:173:1",
+                            "statements": [
+                                {
+                                    "assignments": [
+                                        73
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 73,
+                                            "mutability": "mutable",
+                                            "name": "contractB",
+                                            "nameLocation": "717:9:1",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 83,
+                                            "src": "709:17:1",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            },
+                                            "typeName": {
+                                                "id": 72,
+                                                "name": "address",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "709:7:1",
+                                                "stateMutability": "nonpayable",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 74,
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "709:17:1"
+                                },
+                                {
+                                    "AST": {
+                                        "nodeType": "YulBlock",
+                                        "src": "741:74:1",
+                                        "statements": [
+                                            {
+                                                "nodeType": "YulAssignment",
+                                                "src": "749:60:1",
+                                                "value": {
+                                                    "arguments": [
+                                                        {
+                                                            "kind": "number",
+                                                            "nodeType": "YulLiteral",
+                                                            "src": "769:1:1",
+                                                            "type": "",
+                                                            "value": "0"
+                                                        },
+                                                        {
+                                                            "arguments": [
+                                                                {
+                                                                    "name": "bytecode",
+                                                                    "nodeType": "YulIdentifier",
+                                                                    "src": "776:8:1"
+                                                                },
+                                                                {
+                                                                    "kind": "number",
+                                                                    "nodeType": "YulLiteral",
+                                                                    "src": "786:4:1",
+                                                                    "type": "",
+                                                                    "value": "0x20"
+                                                                }
+                                                            ],
+                                                            "functionName": {
+                                                                "name": "add",
+                                                                "nodeType": "YulIdentifier",
+                                                                "src": "772:3:1"
+                                                            },
+                                                            "nodeType": "YulFunctionCall",
+                                                            "src": "772:19:1"
+                                                        },
+                                                        {
+                                                            "arguments": [
+                                                                {
+                                                                    "name": "bytecode",
+                                                                    "nodeType": "YulIdentifier",
+                                                                    "src": "799:8:1"
+                                                                }
+                                                            ],
+                                                            "functionName": {
+                                                                "name": "mload",
+                                                                "nodeType": "YulIdentifier",
+                                                                "src": "793:5:1"
+                                                            },
+                                                            "nodeType": "YulFunctionCall",
+                                                            "src": "793:15:1"
+                                                        }
+                                                    ],
+                                                    "functionName": {
+                                                        "name": "create",
+                                                        "nodeType": "YulIdentifier",
+                                                        "src": "762:6:1"
+                                                    },
+                                                    "nodeType": "YulFunctionCall",
+                                                    "src": "762:47:1"
+                                                },
+                                                "variableNames": [
+                                                    {
+                                                        "name": "contractB",
+                                                        "nodeType": "YulIdentifier",
+                                                        "src": "749:9:1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "evmVersion": "paris",
+                                    "externalReferences": [
+                                        {
+                                            "declaration": 69,
+                                            "isOffset": false,
+                                            "isSlot": false,
+                                            "src": "776:8:1",
+                                            "valueSize": 1
+                                        },
+                                        {
+                                            "declaration": 69,
+                                            "isOffset": false,
+                                            "isSlot": false,
+                                            "src": "799:8:1",
+                                            "valueSize": 1
+                                        },
+                                        {
+                                            "declaration": 73,
+                                            "isOffset": false,
+                                            "isSlot": false,
+                                            "src": "749:9:1",
+                                            "valueSize": 1
+                                        }
+                                    ],
+                                    "id": 75,
+                                    "nodeType": "InlineAssembly",
+                                    "src": "732:83:1"
+                                },
+                                {
+                                    "eventCall": {
+                                        "arguments": [
+                                            {
+                                                "expression": {
+                                                    "id": 77,
+                                                    "name": "msg",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 4294967281,
+                                                    "src": "846:3:1",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_magic_message",
+                                                        "typeString": "msg"
+                                                    }
+                                                },
+                                                "id": 78,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "memberLocation": "850:6:1",
+                                                "memberName": "sender",
+                                                "nodeType": "MemberAccess",
+                                                "src": "846:10:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            },
+                                            {
+                                                "id": 79,
+                                                "name": "contractB",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 73,
+                                                "src": "858:9:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            },
+                                            {
+                                                "hexValue": "32",
+                                                "id": 80,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "number",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "869:1:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_rational_2_by_1",
+                                                    "typeString": "int_const 2"
+                                                },
+                                                "value": "2"
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_rational_2_by_1",
+                                                    "typeString": "int_const 2"
+                                                }
+                                            ],
+                                            "id": 76,
+                                            "name": "DeployERC20Event",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 33,
+                                            "src": "829:16:1",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint8_$returns$__$",
+                                                "typeString": "function (address,address,uint8)"
+                                            }
+                                        },
+                                        "id": 81,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "829:42:1",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 82,
+                                    "nodeType": "EmitStatement",
+                                    "src": "824:47:1"
+                                }
+                            ]
+                        },
+                        "functionSelector": "84ec1431",
+                        "id": 84,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "deployERC20Burnable",
+                        "nameLocation": "653:19:1",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 70,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 69,
+                                    "mutability": "mutable",
+                                    "name": "bytecode",
+                                    "nameLocation": "686:8:1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 84,
+                                    "src": "673:21:1",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bytes_memory_ptr",
+                                        "typeString": "bytes"
+                                    },
+                                    "typeName": {
+                                        "id": 68,
+                                        "name": "bytes",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "673:5:1",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bytes_storage_ptr",
+                                            "typeString": "bytes"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "672:23:1"
+                        },
+                        "returnParameters": {
+                            "id": 71,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "703:0:1"
+                        },
+                        "scope": 102,
+                        "src": "644:232:1",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 100,
+                            "nodeType": "Block",
+                            "src": "943:173:1",
+                            "statements": [
+                                {
+                                    "assignments": [
+                                        90
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 90,
+                                            "mutability": "mutable",
+                                            "name": "contractB",
+                                            "nameLocation": "957:9:1",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 100,
+                                            "src": "949:17:1",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_address",
+                                                "typeString": "address"
+                                            },
+                                            "typeName": {
+                                                "id": 89,
+                                                "name": "address",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "949:7:1",
+                                                "stateMutability": "nonpayable",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 91,
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "949:17:1"
+                                },
+                                {
+                                    "AST": {
+                                        "nodeType": "YulBlock",
+                                        "src": "981:74:1",
+                                        "statements": [
+                                            {
+                                                "nodeType": "YulAssignment",
+                                                "src": "989:60:1",
+                                                "value": {
+                                                    "arguments": [
+                                                        {
+                                                            "kind": "number",
+                                                            "nodeType": "YulLiteral",
+                                                            "src": "1009:1:1",
+                                                            "type": "",
+                                                            "value": "0"
+                                                        },
+                                                        {
+                                                            "arguments": [
+                                                                {
+                                                                    "name": "bytecode",
+                                                                    "nodeType": "YulIdentifier",
+                                                                    "src": "1016:8:1"
+                                                                },
+                                                                {
+                                                                    "kind": "number",
+                                                                    "nodeType": "YulLiteral",
+                                                                    "src": "1026:4:1",
+                                                                    "type": "",
+                                                                    "value": "0x20"
+                                                                }
+                                                            ],
+                                                            "functionName": {
+                                                                "name": "add",
+                                                                "nodeType": "YulIdentifier",
+                                                                "src": "1012:3:1"
+                                                            },
+                                                            "nodeType": "YulFunctionCall",
+                                                            "src": "1012:19:1"
+                                                        },
+                                                        {
+                                                            "arguments": [
+                                                                {
+                                                                    "name": "bytecode",
+                                                                    "nodeType": "YulIdentifier",
+                                                                    "src": "1039:8:1"
+                                                                }
+                                                            ],
+                                                            "functionName": {
+                                                                "name": "mload",
+                                                                "nodeType": "YulIdentifier",
+                                                                "src": "1033:5:1"
+                                                            },
+                                                            "nodeType": "YulFunctionCall",
+                                                            "src": "1033:15:1"
+                                                        }
+                                                    ],
+                                                    "functionName": {
+                                                        "name": "create",
+                                                        "nodeType": "YulIdentifier",
+                                                        "src": "1002:6:1"
+                                                    },
+                                                    "nodeType": "YulFunctionCall",
+                                                    "src": "1002:47:1"
+                                                },
+                                                "variableNames": [
+                                                    {
+                                                        "name": "contractB",
+                                                        "nodeType": "YulIdentifier",
+                                                        "src": "989:9:1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "evmVersion": "paris",
+                                    "externalReferences": [
+                                        {
+                                            "declaration": 86,
+                                            "isOffset": false,
+                                            "isSlot": false,
+                                            "src": "1016:8:1",
+                                            "valueSize": 1
+                                        },
+                                        {
+                                            "declaration": 86,
+                                            "isOffset": false,
+                                            "isSlot": false,
+                                            "src": "1039:8:1",
+                                            "valueSize": 1
+                                        },
+                                        {
+                                            "declaration": 90,
+                                            "isOffset": false,
+                                            "isSlot": false,
+                                            "src": "989:9:1",
+                                            "valueSize": 1
+                                        }
+                                    ],
+                                    "id": 92,
+                                    "nodeType": "InlineAssembly",
+                                    "src": "972:83:1"
+                                },
+                                {
+                                    "eventCall": {
+                                        "arguments": [
+                                            {
+                                                "expression": {
+                                                    "id": 94,
+                                                    "name": "msg",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 4294967281,
+                                                    "src": "1086:3:1",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_magic_message",
+                                                        "typeString": "msg"
+                                                    }
+                                                },
+                                                "id": 95,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "memberLocation": "1090:6:1",
+                                                "memberName": "sender",
+                                                "nodeType": "MemberAccess",
+                                                "src": "1086:10:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            },
+                                            {
+                                                "id": 96,
+                                                "name": "contractB",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 90,
+                                                "src": "1098:9:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            },
+                                            {
+                                                "hexValue": "33",
+                                                "id": 97,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "number",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "1109:1:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_rational_3_by_1",
+                                                    "typeString": "int_const 3"
+                                                },
+                                                "value": "3"
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_rational_3_by_1",
+                                                    "typeString": "int_const 3"
+                                                }
+                                            ],
+                                            "id": 93,
+                                            "name": "DeployERC20Event",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 33,
+                                            "src": "1069:16:1",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint8_$returns$__$",
+                                                "typeString": "function (address,address,uint8)"
+                                            }
+                                        },
+                                        "id": 98,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "1069:42:1",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 99,
+                                    "nodeType": "EmitStatement",
+                                    "src": "1064:47:1"
+                                }
+                            ]
+                        },
+                        "functionSelector": "620c9bfc",
+                        "id": 101,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "deployERC20MintBurnable",
+                        "nameLocation": "889:23:1",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 87,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 86,
+                                    "mutability": "mutable",
+                                    "name": "bytecode",
+                                    "nameLocation": "926:8:1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 101,
+                                    "src": "913:21:1",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_bytes_memory_ptr",
+                                        "typeString": "bytes"
+                                    },
+                                    "typeName": {
+                                        "id": 85,
+                                        "name": "bytes",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "913:5:1",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_bytes_storage_ptr",
+                                            "typeString": "bytes"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "912:23:1"
+                        },
+                        "returnParameters": {
+                            "id": 88,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "943:0:1"
+                        },
+                        "scope": 102,
+                        "src": "880:236:1",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 103,
+                "src": "58:1060:1",
+                "usedErrors": []
+            }
+        ],
+        "src": "32:1086:1"
+    },
+    "functionHashes": {
+        "deployERC20(bytes)": "8fc5ac06",
+        "deployERC20Burnable(bytes)": "84ec1431",
+        "deployERC20MintBurnable(bytes)": "620c9bfc",
+        "deployERC20Mintable(bytes)": "a10d2a9a"
+    },
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "134200",
+            "executionCost": "177",
+            "totalCost": "134377"
+        },
+        "external": {
+            "deployERC20(bytes)": "infinite",
+            "deployERC20Burnable(bytes)": "infinite",
+            "deployERC20MintBurnable(bytes)": "infinite",
+            "deployERC20Mintable(bytes)": "infinite"
+        }
+    }
+}

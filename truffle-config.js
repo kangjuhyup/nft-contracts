@@ -44,7 +44,7 @@
 // require('dotenv').config();
 // const { MNEMONIC, PROJECT_ID } = process.env;
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 module.exports = {
   /**
@@ -80,6 +80,10 @@ module.exports = {
     //   from: <address>,        // Account to send transactions from (default: accounts[0])
     //   websocket: true         // Enable EventEmitter interface for web3 (default: false)
     // },
+    karam : {
+      provider: () => new HDWalletProvider('14ad6876f67343ecd6fdedf7701c422be2b70fc9edd9084af2d130467e590b14','https://karam.carrieverse.com'),
+      network_id : 47
+    }
     //
     // Useful for deploying to a public network.
     // Note: It's important to wrap the provider as a function to ensure truffle uses a new provider every time.
